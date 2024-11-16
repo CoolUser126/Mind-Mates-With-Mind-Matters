@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment Page</title>
+    <link rel="stylesheet" href="./css/treatment.css">
+</head>
+
+<body>
+    </header>
+    <header class="header">
+        <h1>Welcome to Our Treatment Center</h1>
+        <p>Your well-being is our priority</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="tool-section" id="timer">
+            <h2>Focus Timer</h2>
+            <div class="timer-container" id="timerContainer">
+                <div class="timer-display">
+                    <p id="time">25:00</p>
+                    <button class="button start-btn" onclick="startTimer()">Start</button>
+                    <button class="button pause-btn" onclick="pauseTimer()">Pause</button>
+                    <button class="button reset-btn" onclick="resetTimer()">Reset</button>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" id="progressBar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="todo-list">
+            <h3>To-Do List</h3>
+            <input type="text" id="todoInput" class="todo-input" placeholder="Enter a new task..." />
+            <button class="button add-btn" onclick="addTask()">Add Task</button>
+            <ul id="todoItems" class="todo-items"></ul>
+        </section>
+    </div>
+
+    <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+    <script src="./js/focus.js"></script>
+    <section class="treatment-section">
+        <h2>Treatment Options</h2>
+        <div class="treatment-card" onclick="window.location.href='https:insighttimer.com/guided-meditations';">
+            <h3>Meditation Time</h3>
+            <p>Click anywhere on this page to start your meditation journey.</p>
+        </div>
+        <div class="treatment-card" onclick="window.location.href='https:thequietplaceproject.xyz/thequietplace';">
+            <h3>Cheer up</h3>
+            <p>Our therapy sessions help you manage stress and find balance. We offer individual and group therapy
+                tailored to your needs.</p>
+        </div>
+        
+      
+        <div class="treatment-card" onclick="window.location.href='https:thenicestplace.net/';">
+            <h3>The niceplacest place</h3>
+            <p>Participate in our wellness programs that include yoga, meditation, and relaxation techniques for a
+                holistic approach to health.</p>
+        </div>
+    </section>
+    </div>
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="logo-container">
+                    <img src="./img/logo.png" alt="Logo" class="footer-logo">
+                </div>
+                <div class="footer-links">
+                    <div class="company">
+                        <h4>COMPANY</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Team</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="partnership">
+                        <h4>SERVICES</h4>
+                        <ul>
+                            <!-- <li><a href="#">Premium</a></li> -->
+                            <li><a href="#">Request a Demo</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Discord</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="partnership">
+                        <h4>PARTNERSHIP</h4>
+                        <ul>
+                            <li><a href="#">Affiliate Program</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="partnership">
+                        <h4>CONTACT US</h4>
+                        <ul>
+                            <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=new">Gmail</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <ul class="social-icons">
+                    <li><a href="#" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <hr>
+            <div class="terms">
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms & Conditions</a></li>
+                    <!-- <li><a href=""></a></li> -->
+                </ul>
+                <p>Copyright &copy; 2024 LLC. Provider of Mind Matters. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

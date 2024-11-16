@@ -1,0 +1,134 @@
+
+    .testimonial-section {
+        
+        
+        background-color: #ffffff; /* Neutral contrast for testimonials */
+        padding: 3rem 1rem;
+        text-align: center;
+    }
+
+    .testimonial-section h2 {
+        color: #00a896; /* Primary color for headings */
+        margin-bottom: 2rem;
+    }
+
+    .testimonial-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .testimonial-card {
+        background: #f9f9f9;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonial-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        border: 3px solid #00a896; /* Primary border for profile images */
+    }
+
+    .testimonial-card h3 {
+        color: #00a896;
+        margin-bottom: 0.5rem;
+    }
+
+    .testimonial-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    .floating-icon {
+        position: fixed;
+        bottom: 80px; /* Adjust vertical position */
+        left: 250px; /* Adjust horizontal position */
+        width: 60px;
+        height: 60px;
+        background-color: #00a896; /* Matches the primary color */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 800px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .floating-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .floating-icon:hover {
+        transform: scale(1.1);
+        background-color: #00867a; /* Hover effect color */
+    }
+    /* From Uiverse.io by JohnnyCSilva */ 
+.card {margin-left: 160px;
+    
+    width: 100%;
+    max-width: 400px;
+    height: 80px;
+    background: #a3aad08f;
+    border-radius: 20px;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#d7cfcf, #9198e5);
+  }
+  
+  .card:hover > .img {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(#9198e5, #712020);
+  }
+  
+  .textBox {
+    width: calc(100% - 90px);
+    margin-left: 10px;
+    color: white;
+    font-family: 'Poppins' sans-serif;
+  }
+  
+  .textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .h1 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .p {
+    font-size: 12px;
+    font-weight: lighter;
+  }  
+  

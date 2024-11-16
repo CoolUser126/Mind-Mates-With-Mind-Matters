@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive ADHD Quiz</title>
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .question-section {
+            padding: 2rem;
+            display: none;
+        }
+        .question-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .option {
+            flex: 1 1 calc(50% - 1rem);
+            background: #f0f3bd;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .option:hover {
+            background: #d1e8e4;
+            transform: scale(1.05);
+        }
+        .option.selected {
+            background: #00a896;
+            color: #fff;
+            border-color: #007bff;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background: #f1f1f1;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .progress-bar {
+            height: 10px;
+            background: #ddd;
+            margin: 0;
+        }
+        .progress {
+            height: 10px;
+            background: #007bff;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .score-section {
+            padding: 2rem;
+            text-align: center;
+            display: none;
+        }
+        .score-section.active {
+            display: block;
+        }
+        .score-text {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ADHD Probability Quiz</h1>
+    </header>
+    <div class="quiz-container">
+        <div class="progress-bar">
+            <div class="progress" id="progress-bar"></div>
+        </div>
+
+        <!-- Questions -->
+        <div class="question-section active" id="question-1">
+            <div class="question-text">1. Do you often have difficulty sustaining attention on tasks?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section" id="question-2">
+            <div class="question-text">2. Are you frequently distracted by external stimuli?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+
+        <!-- More questions can be added here -->
+        <div class="question-section active" id="question-1">
+            <div class="question-text">3. Do you find it challenging to complete detailed work due to carelessness or lack of focus?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">4. Do you have trouble organizing tasks or managing time effectively, leading to missed deadlines or forgotten commitments?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">5. Do you often feel restless or find it hard to remain seated in situations where it is expected (e.g., meetings, movies)?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">6. Do you frequently interrupt others during conversations or find it difficult to wait your turn in lines or discussions?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">7. Do you talk excessively or feel the need to blurt out answers before the question is fully asked?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">8. Do you often feel driven by a motor, like you’re always on the go or unable to relax?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">9. Do you often feel overwhelmed by tasks or responsibilities, even if they seem manageable to others?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">10. Do you experience frequent mood swings, frustration, or difficulty managing emotions in response to daily challenges?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">11. Do you struggle to follow through on instructions or finish tasks because your mind wanders or you lose interest?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">12. Do you often lose or misplace items necessary for tasks (e.g., keys, wallet, documents, phone)?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">13. Has your lack of focus or hyperactivity caused challenges in maintaining relationships or performing well at school/work?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">14. Do you often feel misunderstood by others due to your energy level, forgetfulness, or impulsive behavior?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <div class="question-section active" id="question-1">
+            <div class="question-text">15. Do you find it challenging to follow through on long-term projects or commitments?</div>
+            <div class="options">
+                <div class="option" data-value="0">Never</div>
+                <div class="option" data-value="1">Rarely</div>
+                <div class="option" data-value="2">Sometimes</div>
+                <div class="option" data-value="3">Often</div>
+                <div class="option" data-value="4">Very Often</div>
+            </div>
+        </div>
+        <!-- Score Section -->
+        <div class="score-section" id="score-section">
+            <div class="score-text" id="score-text"></div>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button id="prev-btn" onclick="prevQuestion()">Back</button>
+            <button id="next-btn" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.question-section');
+        const progressBar = document.getElementById('progress-bar');
+        const scoreSection = document.getElementById('score-section');
+        const scoreText = document.getElementById('score-text');
+        const options = document.querySelectorAll('.option');
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                option.parentNode.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+            });
+        });
+
+        function updateProgressBar() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        function nextQuestion() {
+            const selected = questions[currentQuestion].querySelector('.option.selected');
+            if (!selected) {
+                alert('Please select an answer!');
+                return;
+            }
+            score += parseInt(selected.getAttribute('data-value'), 10);
+
+            questions[currentQuestion].classList.remove('active');
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                questions[currentQuestion].classList.add('active');
+                updateProgressBar();
+            } else {
+                showScore();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                questions[currentQuestion].classList.remove('active');
+                currentQuestion--;
+                questions[currentQuestion].classList.add('active');
+                updateProgressBar();
+            }
+        }
+
+        function showScore() {
+            scoreSection.classList.add('active');
+            questions[currentQuestion - 1].classList.remove('active');
+            scoreText.textContent = `Your total score is: ${score}`;
+        }
+
+        function restartQuiz() {
+            score = 0;
+            currentQuestion = 0;
+            scoreSection.classList.remove('active');
+            questions[currentQuestion].classList.add('active');
+            updateProgressBar();
+        }
+
+        updateProgressBar();
+    </script>
+</body>
+</html>

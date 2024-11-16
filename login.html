@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <title>Login Page</title>
+</head>
+<body>
+  <form class="form">
+    <span class="close-icon">&times;</span>
+         <p class="form-title">login your account</p>
+      <div class="input-container">
+        <input type="email" placeholder="Enter email">
+        <span>
+        </span>
+    </div>
+    <div class="input-container">
+        <input type="password" placeholder="Enter password">
+      </div>
+       <button type="submit" class="submit">
+      Sign in
+    </button>
+    
+
+    <p class="signup-link">
+      No account?
+      <a href="./signup.html">Sign up</a>
+    </p>
+ </form>
+ <script>
+   document.querySelector('.close-icon').addEventListener('click', () => {
+    window.history.back(); // Navigates to the previous page
+  });
+ </script>
+ <script src="login.js"></script>
+
+</body>
+</html>
+    

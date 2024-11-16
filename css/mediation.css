@@ -1,0 +1,27 @@
+/* this medition.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+    color: white;
+    text-align: center;
+}
+
+.meditation-page {
+    width: 80%;
+    padding: 50px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.meditation-page:hover {
+    background: rgba(255, 255, 255, 0.2);
+}

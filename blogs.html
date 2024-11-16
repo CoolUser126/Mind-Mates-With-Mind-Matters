@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/blogs.css">
+    <title>ADHD Blog</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F7F3E9; /* Light cream for ADHD comfort */
+            color: #4A4A4A; /* Charcoal Gray */
+        }
+
+        header {
+            background-color: #028090; /* Calming Blue */
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4A4A4A;
+            margin-bottom: 2rem;
+        }
+
+        /* Flexbox Grid for Blog Posts */
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .blog-card {
+            background: #FFFFFF; /* White background for contrast */
+            flex: 1 1 calc(25% - 2rem); /* 4 cards per row for laptops */
+            margin: 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Hover Effects */
+        .blog-card:hover {
+            transform: translateY(-10px); /* Subtle lift */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            background-color: #02c39a; /* Soft Yellow Hover Effect */
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content h2 {
+            color: #6A93D4; /* Calming Blue */
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #F7C857; /* Warm Yellow */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #E97AC2; /* Dynamic Purple */
+        }
+
+        footer {
+            background-color: #6A93D4; /* Calming Blue */
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .blog-card {
+                flex: 1 1 calc(33.333% - 2rem); /* 3 cards per row for tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-card {
+                flex: 1 1 calc(50% - 1rem); /* 2 cards per row for small tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-card {
+                flex: 1 1 100%; /* 1 card per row for phones */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <link rel="stylesheet" href="styles.css">
+        <div class="container">
+                <img src="./img/navlogo.png" alt="logo" style="height: 60px;"><img src="./img/text_logo.png" alt="" style="height: 30px; margin-left: -160px;margin-bottom: -60px; ">
+            <nav>
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./Questions.html">Questionnaire</a></li>
+                    <li><a href="./treatment.html">Treatment</a></li>
+                    <li><a href="#"id="communityChatBtn">Commuity Chat</a></li>
+                    <li><a href="./blogs.html">Blogs</a></li>
+                    <li><a href="./contact.html" id="contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="buttons">
+                <a href="./login.html" class="btn login">Login</a>
+                <a href="./signup.html" class="btn signup">Sign Up</a>
+            </div>
+        </div>
+        <script src="./js/popup.js"></script>
+    </header>
+
+
+    <main>
+        <h1>Latest Articles</h1>
+        <div class="blog-container">
+            <!-- Blog Post 1 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="./img/focus.jpg" alt="Blog 1 Image">
+                </div>
+                <div class="blog-content">
+                    <h2>How to Stay Focused with ADHD</h2>
+                    <p>
+                        Struggling to stay focused? Explore tips and strategies that can help you tackle distractions and maintain productivity throughout the day.
+                    </p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="./img/time.jpg" alt="Blog 2 Image">
+                </div>
+                <div class="blog-content">
+                    <h2>Time Management Techniques</h2>
+                    <p>
+                        Learn practical time management techniques specifically designed for individuals with ADHD to help you achieve your goals.
+                    </p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="./img/adhd.jpg" alt="Blog 3 Image">
+                </div>
+                <div class="blog-content">
+                    <h2>Understanding ADHD</h2>
+                    <p>
+                        Dive into the science behind ADHD, its symptoms, and how to approach diagnosis and treatment with a compassionate perspective.
+                    </p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <section class="testimonial-section">
+            <h1> ADHD Sufferers </h1>
+            <div class="testimonial-container">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <img src="./img/moe.jpg" alt="User Image">
+                    <h3>Susan Baroncini-Moe</h3>
+                       <h4> Executive coach and author of Business in Blue Jeans</h4>
+                    <p>
+                        "When Susan Baroncini-Moe was diagnosed with attention deficit disorder (ADHD or ADD), in her late 30s, she finally understood why she had a hard time completing projects, forgot things frequently, and talked so much. On the other hand, the diagnosis made her question who she was.
+                        "
+                    </p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <img src="./img/brian.jpg" alt="User Image">
+                    <h3>Brian Scudamore</h3>
+                    <h4>Founder and CEO of O2E and 1-800-GOT-JUNK</h4>
+                    <p>
+                        . “Over the years, I had to develop tools and tricks to get stuff done quickly and efficiently,” Scudamore explains. He has learned that movement increases his focus. Changing work locations sharpens and extends his concentration. As a CEO, he spends time every week doing work in coffee shops, because the buzz of activity there helps him think more clearly.
+                    </p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <img src="./img/curry.avif" alt="User Image">
+                    <h3>Matt Curry
+                       </h3>
+                    <h4> Founder of The Hybrid Shop</h4>
+                
+                    <p>
+                        Matt Curry was diagnosed with ADHD in 1978, when he was in seventh grade. He was prescribed Ritalin, but, after a year, his parents and doctors agreed to discontinue the medication. That was good news for Curry: He discovered that he could be successful without treating his ADHD.
+                    </p>
+                </div>
+            </div>
+        </section>
+<div class="card" onclick="window.location.href='./share.html';">
+    <h1>Share your Experience</h1>
+    </div>
+
+
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="logo-container">
+                    <img src="./img/logo.png" alt="Logo" class="footer-logo"> 
+                </div>
+                <div class="footer-links">
+                    <div class="company">
+                        <h4>COMPANY</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Team</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                  <div class="partnership">
+                        <h4>SERVICES</h4>
+                        <ul>
+                            <!-- <li><a href="#">Premium</a></li> -->
+                          <li><a href="#">Request a Demo</a></li>
+                          <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Discord</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="partnership">
+                        <h4>PARTNERSHIP</h4>
+                        <ul>
+                            <li><a href="#">Affiliate Program</a></li>
+        
+                        </ul>
+                    </div>
+                  <div class="partnership">
+                        <h4>CONTACT US</h4>
+                        <ul>
+                            <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=new">Gmail</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <ul class="social-icons">
+                    <li><a href="#" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <hr> 
+           <div class="terms">
+            <ul>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms & Conditions</a></li>
+                <!-- <li><a href=""></a></li> -->
+            </ul>
+            <p>Copyright &copy; 2024 LLC. Provider of Mind Matters. All rights reserved.</p>   
+           </div>
+        </div>
+    </footer>
+  
+</body>
+</html>

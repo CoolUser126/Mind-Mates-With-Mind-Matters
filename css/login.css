@@ -1,0 +1,119 @@
+
+body {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center;    /* Vertically center */
+  height: 100vh;          /* Full viewport height */
+  margin: 0;              /* Remove default body margin */
+  background-color: #f3f4f6; /* Light background color for better contrast */
+  font-family: Arial, sans-serif; /* Optional: Set a default font */
+}
+.form {
+  background-color: #fff;
+  display: inline-block;
+  padding: 1rem;
+  max-width: 500px;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  text-align: end;
+  position: relative; /* Needed for close button positioning */
+}
+.close-icon {
+  font-size: 2rem; 
+}
+
+.close-icon:hover {
+  color: #FF0000; /* Change color on hover */
+}
+
+.form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+  color: #00a896#f0f3bd#00867a#f4a261;
+}
+.fotm i{
+margin-left: 50px;
+}
+.input-container {
+  position: relative;
+}
+
+.input-container input, .form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+}
+
+.input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 400px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #4F46E5;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+.signup-link {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+
+/* This is for the message and for the  */
+/* Error messages styling */
+.error-message {
+  color: #FF0000; /* Red color for errors */
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: none; /* Initially hidden */
+}
+
+/* Error state for input fields */
+.input-container.error input {
+  border: 1px solid #FF0000; /* Red border for invalid inputs */
+  background-color: #FFEFEF; /* Light red background for clarity */
+}
+
+/* Success state for input fields */
+.input-container.success input {
+  border: 1px solid #4CAF50; /* Green border for valid inputs */
+  background-color: #E8F5E9; /* Light green background for clarity */
+}
+
+/* Input focus styling for better UX */
+.input-container input:focus {
+  border: 1px solid #4F46E5; /* Highlight the input with the theme color */
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.5); /* Subtle glow effect */
+}
+
+/* Optional: Style the submit button hover */
+.submit:hover {
+  background-color: #3730A3; /* Darker shade of the theme color */
+  cursor: pointer;
+}

@@ -1,0 +1,56 @@
+
+.share-experience-section {
+    background-color: #f0f3bd; /* Soft background */
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.share-experience-section h2 {
+    color: #00a896;
+    margin-bottom: 1rem;
+}
+
+.share-experience-section p {
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+}
+
+.experience-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.experience-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+.experience-form input,
+.experience-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #00a896;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.experience-form button {
+    background-color: #00a896;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.experience-form button:hover {
+    background-color: #00867a; /* Slightly darker shade on hover */
+}
+
